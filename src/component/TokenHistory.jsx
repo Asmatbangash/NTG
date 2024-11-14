@@ -24,18 +24,6 @@ function TokenHistory() {
       <td>{token.createdAt ? new Date(token.createdAt).toLocaleString() : 'N/A'}</td>
     </tr>
     ))}
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-    <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
   </tbody>
 
   </table>
