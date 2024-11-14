@@ -2,7 +2,7 @@ import React, { createContext, useState, useEffect } from 'react';
 import axios from 'axios';
 
 // Context creation with default value
-export let AllTokenStore = createContext({
+export const AllTokenStore = createContext({
   allTokens: []
 });
 

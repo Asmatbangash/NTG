@@ -6,18 +6,11 @@ import 'aos/dist/aos.css';
 import { AllTokenStore } from "../context/TokenStore";
 
 function AllTokens() {
-  // const [allTokens, setAllTokens] = useState([]);
+  let {allTokens} = useContext(AllTokenStore)
   const contentRef = useRef(null);
   const reactToPrintFn = useReactToPrint({ contentRef });
   
-  let {allTokens} = useContext(AllTokenStore)
-  // useEffect(() => {
-  //   axios
-  //     .get("http://localhost:2020/api/all-tokens")
-  //     .then((res) => setAllTokens(res.data))
-  //     .catch((error) => console.log(error));
-  // }, []);
-
+ 
   useEffect(() => {
     AOS.init({ duration: 2000 });
   }, []);

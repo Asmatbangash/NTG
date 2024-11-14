@@ -19,7 +19,7 @@ function Navbar() {
             <Link to="/about" className="nav-link text-white" >About</Link>
           </li>
           <li className="nav-item">
-            <Link to="/all-tokens" className="nav-link text-white">All-Tokens</Link>
+            <a href="/all-tokens" className="nav-link text-white">All-Tokens</a>
           </li>
           <li className="nav-item">
             <Link  to="/token-history" className="nav-link text-white">Token-History</Link>

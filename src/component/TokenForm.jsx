@@ -21,7 +21,7 @@ function TokenForm({displayToken, setDisplayToken}) {
 
   return (
     <div className="col-md-10 mx-auto col-lg-5 position-absolute top-50 start-50 translate-middle" style={{display:displayToken}}>
-    <form className="p-4 p-md-5 border rounded-3 bg-dark-subtle" onSubmit={handlTokenData}>
+    <form className="p-4 p-md-5 border rounded-3 text-black bg-dark-subtle" onSubmit={handlTokenData}>
       <div className="form-floating mb-3">
         <input
           type="text"
