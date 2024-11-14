@@ -1,0 +1,11 @@
+.home{
+    background: url('../assets/images/lineTwo.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    filter: brightness(70%);
+}
+
+.detail{
+    padding-top: 15rem;
+}
