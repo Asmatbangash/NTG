@@ -3,14 +3,14 @@ import axios from "axios";
 import { useReactToPrint } from "react-to-print";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import { allTokenStore } from "../context/TokenStore";
+import { AllTokenStore } from "../context/TokenStore";
 
 function AllTokens() {
   // const [allTokens, setAllTokens] = useState([]);
   const contentRef = useRef(null);
   const reactToPrintFn = useReactToPrint({ contentRef });
   
-  let {allTokens} = useContext(allTokenStore)
+  let {allTokens} = useContext(AllTokenStore)
   // useEffect(() => {
   //   axios
   //     .get("http://localhost:2020/api/all-tokens")

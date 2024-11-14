@@ -1,27 +1,31 @@
-import React, { createContext, useState, useEffect} from 'react'
+import React, { createContext, useState, useEffect } from 'react';
 import axios from 'axios';
 
-export let allTokenStore = createContext({
-  allTokens : []
-})
+// Context creation with default value
+export let AllTokenStore = createContext({
+  allTokens: []
+});
 
+function TokenStore({ children }) {
+  const [allTokens, setAllTokens] = useState([]);
 
-
-function TokenStore({children}) {
-   let [allTokens, setAllTokens] = useState([])
-  useEffect(async() => {
-   await axios
-      .get("http://localhost:2020/api/all-tokens")
-      .then((res) => setAllTokens(res.data))
-      .catch((error) => console.log(error));
+  useEffect(() => {
+    const fetchTokens = async () => {
+      try {
+        const res = await axios.get("http://localhost:2020/api/all-tokens");
+        setAllTokens(res.data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchTokens();
   }, []);
+
   return (
-    <div>
-    <allTokenStore.Provider value={{allTokens}}>
+    <AllTokenStore.Provider value={{ allTokens }}>
       {children}
-    </allTokenStore.Provider>
-    </div>
-  )
+    </AllTokenStore.Provider>
+  );
 }
 
-export default TokenStore
+export default TokenStore;
