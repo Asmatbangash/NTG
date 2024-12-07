@@ -1,4 +1,3 @@
-import { set } from "mongoose";
 import Token from "../models/Token.model.js";
 
 export const tokenData = async (req, res, next) => {
@@ -6,12 +5,12 @@ export const tokenData = async (req, res, next) => {
     let { name, FatherName } = req.body;
     const latestToken = await Token.findOne().sort({ tokenNumber: -1 });
     const tokenNumber = latestToken ? latestToken.tokenNumber + 1 : 1;
-    let generateTokenNumber =  new Token({
+    let generateTokenNumber = new Token({
       name: name,
-      FatherName : FatherName,
+      FatherName: FatherName,
       tokenNumber: tokenNumber,
       createdAt: Date.now(),
-      expiresAt : Date.now() + 24 * 60 * 60 * 1000
+      expiresAt: Date.now() + 24 * 60 * 60 * 1000,
     });
     generateTokenNumber
       .save()
